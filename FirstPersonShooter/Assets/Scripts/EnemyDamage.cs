@@ -11,7 +11,7 @@ public class EnemyDamage : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.transform.CompareTag("bullet"))
+        if (other.collider.transform.CompareTag("Bullet"))
         {
             //If the comparison is true, we increase the hit number.
             hitNumber++;
