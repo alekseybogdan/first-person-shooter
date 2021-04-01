@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
     void ApplyDamage(int damage)
     {
-        health = health - damage;
+        health -= damage;
         UpdateText();
         if (!isActive && damageFX != null)
             StartCoroutine(SetEffect());
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     void ApplyHeal(int heal)
     {
         //Stores the current health and subtracts the damage value
-        health = health + heal;
+        health += heal;
         UpdateText();
     }
 

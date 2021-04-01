@@ -11,26 +11,43 @@ public class UseAttacks : MonoBehaviour
     public Text ammoPanel;
     private bool punchActive;
 
+    MuzzleFlash muzzleFlash;
+
+    public GameObject projectileSpawn;
+
+    public PauseMenu pause;
+
+    float fireElapsedTime = 0f;
+    public float fireDelay = 1f;
+
     private void Start()
     {
         //Update text to display the player ammo.
         UpdateText();
         //Hide the hand when we start the game and have ammo.
         punchMesh.SetActive(false);
+        muzzleFlash = GetComponent<MuzzleFlash>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        fireElapsedTime += Time.deltaTime;
+
+        if (Input.GetButtonDown("Fire1") && !pause.isGamePaused)
         {
             if (ammoAmount > 0)
             {
-                ammoAmount--;
-                UpdateText();
-                var clone = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
-                //Destroy after 2 seconds to stop clutter.
-                Destroy(clone, 5.0f);
+                if (fireElapsedTime >= fireDelay)
+                {
+                    fireElapsedTime = 0f;
+                    ammoAmount--;
+                    UpdateText();
+                    var clone = Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+                    muzzleFlash.Activate();
+                    //Destroy after 2 seconds to stop clutter.
+                    Destroy(clone, 5.0f);
+                }
             }
             else
             {

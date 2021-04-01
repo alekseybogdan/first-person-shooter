@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyDamage : MonoBehaviour
 {
     private int hitNumber;
+    public GameObject ragdoll;
 
     private void OnEnable()
     {
@@ -19,6 +21,7 @@ public class EnemyDamage : MonoBehaviour
         if (hitNumber == 3)
         {
             gameObject.SetActive(false);
+            Instantiate(ragdoll, transform.position, transform.rotation);
         }
     }
 }

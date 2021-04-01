@@ -5,7 +5,7 @@ public class ProjectileMovement : MonoBehaviour
     public float speed = 10f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
