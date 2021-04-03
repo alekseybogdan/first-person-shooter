@@ -1,3 +1,2 @@
-# first-person-shooter
-Hello world!
-Greetings from Belarus!
+# BLOODLUST
+BLOODLUST is an FPS-game that presents supernatural skills.
