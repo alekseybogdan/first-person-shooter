@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
-- When firing, sound now comes from a weapon, not bullet.
+- When firing, sound now comes from the weapon, not bullet.
 ### Deprecated
 
 ### Removed
