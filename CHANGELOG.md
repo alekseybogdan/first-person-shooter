@@ -18,3 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Zombies can now get up on carts
 - Rain ripples no longer appear in midair
 - Improved performance
+- Fixed bullets' behavior
