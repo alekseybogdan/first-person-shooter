@@ -49,7 +49,7 @@ public class UseAttacks : MonoBehaviour
                     ammoAmount--;
                     UpdateText();
                     var clone = Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
-                    muzzleFlash.Activate();
+                    //muzzleFlash.Activate();
                     audioSource.PlayOneShot(pistolShot);
                     //Destroy after 2 seconds to stop clutter.
                     Destroy(clone, 5.0f);

@@ -2,57 +2,41 @@
 
 public class MouseLook : MonoBehaviour
 {
-    private GameObject player;
-    private float minClamp = -90;
-    private float maxClamp = 90;
-    [HideInInspector]
-    public Vector2 rotation;
-    private Vector2 currentLookRot;
-    private Vector2 rotationV = new Vector2(0, 0);
-    public float lookSensitivity = 2;
-    public float lookSmoothDamp = 0.1f;
-    //Required if we are using the camera to freelook.
-    private CharacterMovement cm;
-    private bool resetRotation = false;
+    [SerializeField] private float sensX;
+    [SerializeField] private float sensY;
+
+    [SerializeField] Transform cam;
+    [SerializeField] Transform orientation;
+
+    float mouseX;
+    float mouseY;
+
+    float multiplier = 0.01f;
+
+    float xRotation;
+    float yRotation;
+
+    private float minClamp = -90f;
+    private float maxClamp = 90f;
 
     void Start()
     {
-        //Access the player GameObject.
-        player = transform.parent.gameObject;
-        cm = player.GetComponent<CharacterMovement>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Player input from the mouse
-        rotation.y += Input.GetAxis("Mouse Y") * lookSensitivity;
-        //Limit ability look up and down.
-        rotation.y = Mathf.Clamp(rotation.y, minClamp, maxClamp);
-        //Rotate the character around based on the mouse X position.
-        //Unless we are not grounded or for the one frame where we set the player to match the camera.
-        if (cm.Grounded)
-        {
-            if (resetRotation)
-            {
-                resetRotation = false;
-                player.transform.localEulerAngles += new Vector3(0, currentLookRot.x, 0);
-                currentLookRot.x = 0;
-            }
-            else
-            {
-                player.transform.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X") * lookSensitivity);
-            }
-        }
-        else
-        {
-            resetRotation = true;
-            //Free look in the Y rotation based on mouse.
-            currentLookRot.x += Input.GetAxis("Mouse X") * lookSensitivity;
-        }
-        //Smooth the current Y rotation for looking up and down.
-        currentLookRot.y = Mathf.SmoothDamp(currentLookRot.y, rotation.y, ref rotationV.y, lookSmoothDamp);
-        //Update the camera X, Y rotation based on the values generated.
-        transform.localEulerAngles = new Vector3(-currentLookRot.y, currentLookRot.x, 0);
+        mouseX = Input.GetAxisRaw("Mouse X");
+        mouseY = Input.GetAxisRaw("Mouse Y");
+
+        yRotation += mouseX * sensX * multiplier;
+        xRotation -= mouseY * sensY * multiplier;
+
+        xRotation = Mathf.Clamp(xRotation, minClamp, maxClamp);
+
+        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

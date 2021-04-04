@@ -7,6 +7,8 @@ public class CorvoBlink : MonoBehaviour
     Vector3 destination;
     bool FXVisible = false;
 
+    public Transform player;
+
     private void Start()
     {
         particleFX = Instantiate(particlePrefab);
@@ -45,7 +47,7 @@ public class CorvoBlink : MonoBehaviour
         if (Input.GetMouseButtonUp(1) && transform.position != destination)
         {
             destination.y += 0.5f;
-            transform.parent.position = destination;
+            player.position = destination;
             FXVisible = false;
         }
         if (FXVisible)
