@@ -20,6 +20,10 @@ public class UseAttacks : MonoBehaviour
     float fireElapsedTime = 0f;
     public float fireDelay = 1f;
 
+    AudioSource audioSource;
+
+    public AudioClip pistolShot;
+
     private void Start()
     {
         //Update text to display the player ammo.
@@ -27,6 +31,7 @@ public class UseAttacks : MonoBehaviour
         //Hide the hand when we start the game and have ammo.
         punchMesh.SetActive(false);
         muzzleFlash = GetComponent<MuzzleFlash>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +50,7 @@ public class UseAttacks : MonoBehaviour
                     UpdateText();
                     var clone = Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
                     muzzleFlash.Activate();
+                    audioSource.PlayOneShot(pistolShot);
                     //Destroy after 2 seconds to stop clutter.
                     Destroy(clone, 5.0f);
                 }

@@ -2,11 +2,17 @@
 
 public class ProjectileMovement : MonoBehaviour
 {
-    public float speed = 10f;
+    public float launchForce = 10f;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        rb.velocity = launchForce * transform.forward;
     }
 }
