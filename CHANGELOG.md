@@ -16,3 +16,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed buttons' borders in Main Menu
 - Zombies can now get up on carts
+- Rain ripples no longer appear in midair
+- Improved performance
