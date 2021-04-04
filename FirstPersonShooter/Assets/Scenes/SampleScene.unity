@@ -7752,7 +7752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &336018913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23186,7 +23186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &704763107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42095,7 +42095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1244230192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56831,7 +56831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1924867491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61156,6 +61156,14 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1060851828}
+    - target: {fileID: 8550909184706610386, guid: f7632fa137fc0f940a9c3b78d3b8f24c, type: 3}
+      propertyPath: walkSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550909184706610386, guid: f7632fa137fc0f940a9c3b78d3b8f24c, type: 3}
+      propertyPath: sprintSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8550909184706610387, guid: f7632fa137fc0f940a9c3b78d3b8f24c, type: 3}
       propertyPath: m_RootOrder
       value: 0
