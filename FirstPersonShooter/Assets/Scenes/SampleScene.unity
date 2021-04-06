@@ -47987,7 +47987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1381061889
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64906,7 +64906,7 @@ MonoBehaviour:
   groundCheckDistance: 1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
 --- !u!4 &8550909184908961571
 Transform:
   m_ObjectHideFlags: 0
