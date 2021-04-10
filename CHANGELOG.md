@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - When firing, sound now comes from the weapon instead of bullet.
-- Decreased pistol firing delay
+- Reduced time between shots for pistol
+- Different shot sound for pistol
 ### Deprecated
 
 ### Removed
