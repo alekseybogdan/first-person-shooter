@@ -24,3 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved performance
 - Fixed bullets' behavior
 - Player now moves with normal speed
+- Pick-ups no longer "bump" into player when collecting them
