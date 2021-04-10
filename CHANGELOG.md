@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reduced time between shots for pistol
 - Different shot sound for pistol
 - Different model for pistol
+- Zombies now moan quieter.
 ### Deprecated
 
 ### Removed
