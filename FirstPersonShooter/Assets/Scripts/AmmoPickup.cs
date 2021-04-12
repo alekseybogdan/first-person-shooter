@@ -8,7 +8,7 @@ public class AmmoPickup : MonoBehaviour
     public bool respawn;
     public float delaySpawn = 30;
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         //We compare the tag in the other object to the tag name we set earlier.
         if (other.transform.CompareTag("Player"))

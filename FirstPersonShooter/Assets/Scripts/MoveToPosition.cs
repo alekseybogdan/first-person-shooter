@@ -10,6 +10,7 @@ public class MoveToPosition : MonoBehaviour
     private bool hit;
     private ContactPoint contact;
     private float timer;
+    EnemyDamage enemyDamage;
 
     void Start()
     {
@@ -17,6 +18,8 @@ public class MoveToPosition : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         //Set timer to the same a knockback in first instance.
         timer = knockbackTime;
+
+        enemyDamage = GetComponent<EnemyDamage>();
     }
 
     void Update()
@@ -52,6 +55,11 @@ public class MoveToPosition : MonoBehaviour
         {
             contact = other.contacts[0];
             hit = true;
+            var bulletHit = other.transform.GetComponent<BulletHit>();
+            int damage;
+            if (bulletHit != null) damage = bulletHit.damage;
+            else damage = 10;
+            enemyDamage.ApplyDamage(damage);
         }
     }
 }

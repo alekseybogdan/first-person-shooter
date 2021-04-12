@@ -5,55 +5,43 @@ using UnityEngine.UI;
 public class UseAttacks : MonoBehaviour
 {
     public int ammoAmount = 10;
-    public float meleeRepeatDelay = 0.25f;
-    public GameObject projectile;
-    public GameObject punchMesh;
     public Text ammoPanel;
+    public Transform weaponHold;
+    Gun equippedGun;
+    public Gun startingGun;
+
+    public float meleeRepeatDelay = 0.25f;
+    public GameObject punchMesh;
     private bool punchActive;
-
-    MuzzleFlash muzzleFlash;
-
-    public GameObject projectileSpawn;
 
     public PauseMenu pause;
 
-    float fireElapsedTime = 0f;
-    public float fireDelay = 1f;
-
-    AudioSource audioSource;
-
-    public AudioClip pistolShot;
+    bool shooting;
 
     private void Start()
     {
         //Update text to display the player ammo.
         UpdateText();
         //Hide the hand when we start the game and have ammo.
-        punchMesh.SetActive(false);
-        muzzleFlash = GetComponent<MuzzleFlash>();
-        audioSource = GetComponent<AudioSource>();
+        punchMesh.SetActive(false);       
+
+        if (startingGun != null)
+            EquipGun(startingGun);
     }
 
     // Update is called once per frame
     void Update()
     {
-        fireElapsedTime += Time.deltaTime;
+        if (equippedGun.fireMode == Gun.FireMode.Single)
+            shooting = Input.GetButtonDown("Fire1");
+        else
+            shooting = Input.GetButton("Fire1");
 
-        if (Input.GetButtonDown("Fire1") && !pause.isGamePaused)
+        if (shooting && !pause.isGamePaused)
         {
             if (ammoAmount > 0)
             {
-                if (fireElapsedTime >= fireDelay)
-                {
-                    fireElapsedTime = 0f;
-                    ammoAmount--;
-                    UpdateText();
-                    var clone = Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
-                    //muzzleFlash.Activate();
-                    audioSource.PlayOneShot(pistolShot);
-                    //Destroy after 2 seconds to stop clutter.
-                    Destroy(clone, 5.0f);
-                }
+                equippedGun.Shoot();
             }
             else
             {
@@ -72,7 +60,7 @@ public class UseAttacks : MonoBehaviour
         UpdateText();
     }
 
-    void UpdateText()
+    public void UpdateText()
     {
         //Check the ammo panel exists.
         if (ammoPanel != null)
@@ -90,5 +78,21 @@ public class UseAttacks : MonoBehaviour
         yield return new WaitForSeconds(meleeRepeatDelay);
         punchActive = false;
         yield return null;
+    }
+
+    public void EquipGun(Gun gunToEquip)
+    {
+        if (equippedGun != null)
+        {
+            Destroy(equippedGun.gameObject);
+        }
+        equippedGun = Instantiate(gunToEquip, weaponHold.position, weaponHold.rotation) as Gun;
+        equippedGun.transform.parent = weaponHold;
+    }
+
+    public void Shoot()
+    {
+        if (equippedGun != null)
+            equippedGun.Shoot();
     }
 }

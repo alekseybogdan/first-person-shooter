@@ -3,22 +3,19 @@ using System.Collections;
 
 public class EnemyDamage : MonoBehaviour
 {
-    private int hitNumber;
+    public int hitPoints;
+    private int _hitPoints;
     public GameObject ragdoll;
 
     private void OnEnable()
     {
-        hitNumber = 0;
+        _hitPoints = hitPoints;
     }
 
-    void OnCollisionEnter(Collision other)
+    public void ApplyDamage(int damage)
     {
-        if (other.collider.transform.CompareTag("Bullet"))
-        {
-            //If the comparison is true, we increase the hit number.
-            hitNumber++;
-        }
-        if (hitNumber == 3)
+        _hitPoints -= damage;
+        if (_hitPoints <= 0)
         {
             gameObject.SetActive(false);
             Instantiate(ragdoll, transform.position, transform.rotation);

@@ -16,8 +16,11 @@ public class ZombieMoan : MonoBehaviour
 
     void FireSound()
     {
-        int index = Random.Range(0, audioClips.Length);
-        AudioClip soundToPlay = audioClips[index];
-        audioSource.PlayOneShot(soundToPlay);
+        if (audioSource.isActiveAndEnabled)
+        {
+            int index = Random.Range(0, audioClips.Length);
+            AudioClip soundToPlay = audioClips[index];
+            audioSource.PlayOneShot(soundToPlay);
+        }
     }
 }

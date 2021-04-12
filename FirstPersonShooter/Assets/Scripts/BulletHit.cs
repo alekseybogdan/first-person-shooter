@@ -4,6 +4,7 @@ using System.Collections;
 public class BulletHit : MonoBehaviour
 {
     public GameObject particle;
+    public int damage;
 
     //When we touch the collider we disable this object.
     void OnCollisionEnter(Collision other)
