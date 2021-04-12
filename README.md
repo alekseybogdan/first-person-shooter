@@ -1,2 +1,2 @@
 # BLOODLUST
-BLOODLUST is an FPS-game that presents supernatural skills.
+BLOODLUST is a gothic FPS-game that presents supernatural skills.

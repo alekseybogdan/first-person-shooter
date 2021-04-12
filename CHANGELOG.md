@@ -8,7 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
-- When firing, sound now comes from the weapon, not bullet.
+- When firing, sound now comes from the weapon instead of bullet
+- Reduced time between shots for pistol
+- Different shot sound for pistol
+- Different model for pistol
+- Zombies now moan quieter
 ### Deprecated
 
 ### Removed
@@ -20,3 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved performance
 - Fixed bullets' behavior
 - Player now moves with normal speed
+- Pick-ups no longer "bump" into player when collecting them
