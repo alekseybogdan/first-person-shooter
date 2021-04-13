@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [RequireComponent(typeof(AudioSource))]
 public class GunPickup : MonoBehaviour
@@ -11,6 +12,7 @@ public class GunPickup : MonoBehaviour
     AudioSource audioSource;
     Collider boxCollider;
     Floater floater;
+    VisualEffect pickupFX;
 
     bool isActive = true;
 
@@ -18,7 +20,8 @@ public class GunPickup : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
-        floater = GetComponent<Floater>();
+        floater = GetComponentInChildren<Floater>();
+        pickupFX = GetComponentInChildren<VisualEffect>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -31,6 +34,7 @@ public class GunPickup : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             boxCollider.enabled = false;
             floater.enabled = false;
+            pickupFX.enabled = false;
             isActive = false;
         }
     }
