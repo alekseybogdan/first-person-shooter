@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 6162905141470057546, guid: 4eb84e32133053e4eac1dc7c98694ca7, type: 3}
+  bloodFX: {fileID: 4027275410528621934, guid: e0da2fd9365bce249b52b18a40199bce, type: 3}
   damage: 30
 --- !u!135 &4598699394570807722
 SphereCollider:

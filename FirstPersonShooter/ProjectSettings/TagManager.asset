@@ -9,6 +9,7 @@ TagManager:
   - Walls
   - Selectable
   - Bounds
+  - Enemy
   layers:
   - Default
   - TransparentFX
