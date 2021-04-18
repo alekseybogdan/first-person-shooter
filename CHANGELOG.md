@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Different shot sound for pistol
 - Different model for pistol
 - Zombies now moan quieter
+- HP changed to Health Bar
 ### Deprecated
 
 ### Removed
