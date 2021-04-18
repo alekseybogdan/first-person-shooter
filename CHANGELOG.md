@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New weapons (rifle, shotgun)
 - Weapon pick-ups with cool VFX
 - 'back' button to play menu
+- Wall Run
 ### Changed
 - When firing, sound now comes from the weapon instead of bullet
 - Reduced time between shots for pistol
@@ -28,3 +29,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed bullets' behavior
 - Player now moves with normal speed
 - Pick-ups no longer "bump" into player when collecting them
+- Player can no longer leave level bounds
