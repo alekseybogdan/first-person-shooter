@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     //Use this to reference the text in the canvas
     public Text healthText;
+    public Slider healthBar;
     public Image damageFX;
     //Sets default health to 100
     public int health = 100;
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         UpdateText();
+        SetHealth(health);
         if (!isActive && damageFX != null)
             StartCoroutine(SetEffect());
     }
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         //Stores the current health and subtracts the damage value
         health += heal;
         UpdateText();
+        SetHealth(health);
     }
 
     void UpdateText()
@@ -47,8 +50,13 @@ public class PlayerHealth : MonoBehaviour
         if (healthText != null)
         {
             //Sets the text on our panel.
-            healthText.text = health.ToString();
+            healthText.text = health.ToString() + " / 100";
         }
+    }
+
+    void SetHealth(int health)
+    {
+        healthBar.value = health;
     }
 
     private IEnumerator SetEffect()
