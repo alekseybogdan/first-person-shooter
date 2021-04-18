@@ -25,7 +25,6 @@ public class TextEmerger : MonoBehaviour
 
 	void Deactivate()
 	{
-		text.GetComponent<CanvasRenderer>().SetAlpha(1f);
 		text.CrossFadeAlpha(0f, fadeSpeed, false);
 	}
 }
