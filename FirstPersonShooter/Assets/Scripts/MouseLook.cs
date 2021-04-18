@@ -2,6 +2,9 @@
 
 public class MouseLook : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] WallRun wallRun;
+
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
 
@@ -36,7 +39,7 @@ public class MouseLook : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, minClamp, maxClamp);
 
-        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
+        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
         orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

@@ -29,8 +29,6 @@ public class CharacterMovement : MonoBehaviour
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
 
-    public float jumpPower = 4f;
-
     [Header("Ground Detection")]
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundMask;
