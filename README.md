@@ -1,2 +1,2 @@
-# BLOODLUST
-BLOODLUST is a gothic FPS-game that presents supernatural skills.
+# GRIM WEST
+GRIM WEST is a deck-building FPS set in the world of Wild West.
