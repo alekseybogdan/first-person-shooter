@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Blood splashes when enemies get hurt
 ### Changed
 - Game's renamed
+- New Main Menu background
 - When firing, sound now comes from the weapon instead of bullet
 - Reduced time between shots for pistol
 - Different shot sound for pistol
