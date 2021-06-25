@@ -6,13 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- New weapons (rifle, shotgun)
-- Weapon pick-ups with cool VFX
 - 'back' button to play menu
 - Wall Run
 - Blood splashes when enemies get hurt
-- Level bounds
 ### Changed
+- Game's renamed
 - When firing, sound now comes from the weapon instead of bullet
 - Reduced time between shots for pistol
 - Different shot sound for pistol
