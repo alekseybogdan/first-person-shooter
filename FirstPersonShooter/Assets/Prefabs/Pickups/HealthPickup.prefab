@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2612865271884362450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.161, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8134206142328647618}
@@ -44,7 +44,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 5
-  m_Range: 10
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -104,9 +104,9 @@ GameObject:
   - component: {fileID: 8134206142328647618}
   - component: {fileID: 8134206142328647619}
   - component: {fileID: 8134206142328647616}
-  - component: {fileID: 8134206142328647617}
   - component: {fileID: 8134206142328647646}
   - component: {fileID: 8402095237293261089}
+  - component: {fileID: 5770210001236669570}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -136,7 +136,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8134206142328647647}
-  m_Mesh: {fileID: 4300000, guid: f94fc23a20a085b40bdb0abc958f04d0, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 2982fb9e970787b43840665f952d69a0, type: 3}
 --- !u!23 &8134206142328647616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77fa1d380c2ace1479604938a198dad1, type: 2}
+  - {fileID: 2100000, guid: e0db521c3499d2f49883d87dff7250c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,19 +179,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8134206142328647617
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8134206142328647647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &8134206142328647646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 10
-  respawn: 1
+  respawn: 0
   delaySpawn: 30
 --- !u!114 &8402095237293261089
 MonoBehaviour:
@@ -222,3 +209,17 @@ MonoBehaviour:
   degreesPerSecond: 100
   amplitude: 0.25
   frequency: 1
+--- !u!136 &5770210001236669570
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134206142328647647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.18802029
+  m_Height: 0.66485226
+  m_Direction: 1
+  m_Center: {x: 0.005892068, y: 0.33470565, z: 0.000000052154064}
