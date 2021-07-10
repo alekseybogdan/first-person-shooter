@@ -10,6 +10,7 @@ TagManager:
   - Selectable
   - Bounds
   - Enemy
+  - Coin
   layers:
   - Default
   - TransparentFX
